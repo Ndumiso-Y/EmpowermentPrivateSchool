@@ -1,7 +1,7 @@
 import './style.css';
 
 // Header scroll effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const header = document.getElementById('header');
     if (header) {
         if (window.scrollY > 100) {
@@ -15,26 +15,26 @@ window.addEventListener('scroll', function() {
 // Form submission
 const contactForm = document.getElementById('contactForm') as HTMLFormElement;
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Get form data
-        const formData = new FormData(this);
+        const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
+
         // Show success message
         alert('Thank you for your message! We will contact you shortly at ' + data.phone + ' or via WhatsApp.');
-        
+
         // Reset form
-        this.reset();
+        contactForm.reset();
     });
 }
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', (e) => {
         e.preventDefault();
-        const href = this.getAttribute('href');
+        const href = anchor.getAttribute('href');
         if (href) {
             const target = document.querySelector(href);
             if (target) {
@@ -74,7 +74,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             (entry.target as HTMLElement).style.opacity = '1';
