@@ -396,6 +396,26 @@ nav {
     margin: 1.5rem auto 0;
 }
 
+.atmosphere-visual {
+    margin-bottom: 4rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 400px;
+    width: 100%;
+}
+
+.atmosphere-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.atmosphere-visual:hover img {
+    transform: scale(1.05);
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
