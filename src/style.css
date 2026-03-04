@@ -116,7 +116,6 @@ nav {
 
 /* Hero Section */
 .hero {
-    margin-top: 80px;
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
     color: var(--white);
     padding: 6rem 2rem;
@@ -318,26 +317,28 @@ nav {
 
 /* Registration Banner */
 .reg-banner {
+    margin-top: 80px;
     background: var(--primary-green);
     color: var(--white);
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 2.5rem;
     font-weight: 600;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1.4;
 }
 
 .reg-banner::before {
     content: '★';
-    position: absolute;
-    left: 10%;
     animation: twinkle 2s infinite;
 }
 
 .reg-banner::after {
     content: '★';
-    position: absolute;
-    right: 10%;
     animation: twinkle 2s infinite 1s;
 }
 
@@ -907,6 +908,22 @@ footer {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .reg-banner {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .reg-banner::before,
+    .reg-banner::after {
+        display: none;
+    }
+
+    .atmosphere-visual {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 2rem;
     }
 }
 
